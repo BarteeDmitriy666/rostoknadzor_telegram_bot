@@ -183,3 +183,7 @@ python -m src.ml.train -r data/my_dataset.csv -a 5 -o models
 **Технические:** подсолнечник, сахарная свёкла, соя, лён, горчица
 
 **Овощи и фрукты:** картофель, томаты, лук, яблоки, сливы, виноград
+
+## Важно
+
+Модели обучены на реальных данных. Датасет - https://github.com/BarteeDmitriy666/rostoknadzor_telegram_bot/blob/main/dataset.csv
