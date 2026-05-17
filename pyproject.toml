@@ -1,0 +1,55 @@
+[project]
+name = "telegram-bot-ml"
+version = "0.1.0"
+description = "AI-powered crop yield and disease forecasting via Telegram"
+requires-python = ">=3.11"
+dependencies = [
+    # Telegram Bot
+    "aiogram>=3.0.0,<4.0.0",
+    # Database
+    "peewee>=3.17.0,<4.0.0",
+    # ML
+    "scikit-learn>=1.4.0,<2.0.0",
+    "numpy>=1.26.0,<3.0.0",
+    "pandas>=2.2.0,<4.0.0",
+    "matplotlib>=3.8.0,<4.0.0",
+    # Config & Validation
+    "pydantic>=2.6.0,<3.0.0",
+    "pydantic-settings>=2.1.0,<3.0.0",
+    "python-dotenv>=1.0.0,<2.0.0",
+    # Logging
+    "loguru>=0.7.0,<1.0.0",
+    # Webhook Server
+    "fastapi>=0.110.0,<2.0.0",
+    "uvicorn>=0.27.0,<1.0.0",
+    # HTTP Client
+    "requests>=2.31.0,<3.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-asyncio>=0.23.0",
+    "pytest-cov>=4.1.0",
+    "httpx>=0.27.0",
+    "python-multipart>=0.0.9",
+]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W"]
+ignore = ["E501"]
